@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DealFinder</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#fff;
+    color:#111;
+}
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    background:white;
+    border-bottom:1px solid #eee;
+    z-index:1000;
+}
+
+.nav{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:black;
+    margin-left:20px;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:600px;
+    margin-bottom:30px;
+    color:#555;
+}
+
+.btn{
+    background:black;
+    color:white;
+    padding:15px 30px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.section{
+    padding:80px 20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    border:1px solid #eee;
+    border-radius:15px;
+    padding:25px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#666;
+    margin-bottom:20px;
+}
+
+footer{
+    text-align:center;
+    padding:40px;
+    border-top:1px solid #eee;
+}
+
+.contact-box{
+    text-align:center;
+}
+
+.contact-box button{
+    margin-top:15px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="nav">
+        <div class="logo">DealFinder</div>
+
+        <div class="nav-links">
+            <a href="#offers">Пропозиції</a>
+            <a href="#about">Про сайт</a>
+            <a href="#contact">Контакти</a>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <h1>Знаходь найкращі онлайн-сервіси</h1>
+
+    <p>
+        Порівнюй найкращі онлайн-сервіси,
+корисні інструменти та вигідні пропозиції
+в одному місці.
+    </p>
+
+    <button class="btn" onclick="goToOffers()">
+        Переглянути пропозиції
+    </button>
+</section>
+
+<section class="section" id="offers">
+    <div class="container">
+
+        <h2 class="title">Популярні пропозиції</h2>
+
+        <div class="cards">
+
+            <div class="card">
+    <h3>Hostinger</h3>
+
+    <p>Хостинг для сайтів зі знижкою до 75%.</p>
+
+    <button class="btn"
+    onclick="openOffer('https://hostinger.com')">
+        Перейти
+    </button>
+</div>
+
+            </div>
+
+<div class="card">
+    <h3>Canva Pro</h3>
+
+    <p>Створення дизайнів, логотипів та банерів онлайн.</p>
+
+    <button class="btn"
+    onclick="openOffer('https://canva.com')">
+        Перейти
+    </button>
+</div>
+
+<div class="card">
+
+            <h3>NordVPN</h3>
+<p>Безпечний VPN для захисту даних та доступу до контенту.</p>
+
+                <button class="btn"
+ onclick="openOffer('https://nordvpn.com')">
+    Перейти
+</button>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="section" id="about">
+    <div class="container">
+
+        <h2 class="title">Про сайт</h2>
+
+        <p style="text-align:center;max-width:700px;margin:auto;">
+            Тут можна розміщувати партнерські посилання
+            на корисні сервіси, товари або програми.
+        </p>
+
+    </div>
+</section>
+
+<section class="section" id="contact">
+    <div class="container contact-box">
+
+        <h2>Контакти</h2>
+
+        <button class="btn" onclick="showEmail()">
+            Показати Email
+        </button>
+
+        <p id="email" style="margin-top:20px;"></p>
+
+    </div>
+</section>
+
+<footer>
+    © 2026 DealFinder
+</footer>
+
+<script>
+
+function goToOffers(){
+    document.getElementById('offers')
+    .scrollIntoView({
+        behavior:'smooth'
+    });
+}
+
+function openOffer(url){
+    window.location.href = url;
+}
+function showEmail(){
+    document.getElementById('email')
+    .innerText = 'your@email.com';
+}
+
+</script>
+
+</body>
+</html>
